@@ -1,0 +1,58 @@
+import java.time.LocalDateTime
+
+plugins {
+    id 'java'
+}
+
+
+// Define the projects from which you want to pick up the class files
+def projectsToPackage = ['platformEvents', 'platform']
+def projectsToPackageFull = ['clientServerModules','platform','platformEvents']
+
+// Define the custom packaging task
+
+
+task artifactPlatformClientServer(type: Jar) {
+
+    // Configure the task
+    // dependsOn projectsToPackage.collect { project(it).tasks.named('build') }
+
+    // Set the destination directory and name of the JAR file
+    group = 'Distribution'
+    destinationDirectory = file("artifacts")
+
+    def branch = "git rev-parse --abbrev-ref HEAD".execute()
+    def b1 = new StringBuffer()
+    branch.consumeProcessErrorStream(b1)
+    def currentHash = "git rev-parse --short HEAD".execute()
+    def b2 = new StringBuffer()
+    currentHash.consumeProcessErrorStream(b2)
+
+    archiveFileName ='platformClientServer-'+new Date().format("ddMMyy")+'_'+branch.text.trim()+'_'+currentHash.text.trim()+'.jar'
+
+    // Include class files from specific projects
+    from {
+        projectsToPackageFull.collect { project(it).sourceSets.main.output }
+    }
+
+}
+
+
+// Configure artifact publication (optional)
+//artifacts {
+//    archives artifactPlatformClientServer
+//}
+
+ext {
+    commonDependenciesPlatformEvents = [
+            libs.annotations,
+            libs.log4j,
+            libs.log4j.api12,
+            libs.log4j.core,
+            libs.log4j.api,
+            libs.agrona,
+            libs.joda.time,
+            libs.commons,
+            libs.mail
+    ]
+}

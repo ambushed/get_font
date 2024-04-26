@@ -1,0 +1,133 @@
+plugins {
+	id 'java-library'
+}
+
+configurations{
+	antTaskPlatform
+}
+
+dependencies {
+	implementation(commonDependenciesPlatformEvents)
+	implementation(libs.guice)
+	implementation(libs.swingx)
+	implementation(libs.swingx16)
+	implementation(libs.xcapi)
+	implementation(libs.json)
+	implementation(libs.websocket)
+	implementation(libs.http.client)
+	implementation(libs.http.core)
+	implementation(libs.xchange.bitstamp)
+	implementation(libs.xchange.bitstamp4)
+	implementation(libs.xchange.core)
+	implementation(libs.xchange.stream)
+	implementation(libs.apache.commons3)
+	implementation(libs.apache.poi)
+	implementation(libs.apache.poi.ooxml)
+	implementation(libs.mongodb)
+	implementation(libs.guava)
+	implementation(libs.thoughtworks.xstream)
+	implementation(libs.javax.persistence)
+	implementation(libs.jxl)
+	implementation(libs.layout)
+	implementation(libs.swingx)
+	implementation(libs.binding.core)
+	implementation(libs.binding.swing)
+	implementation(libs.jgoodies.binding)
+	implementation(libs.hibernate.annotations)
+	implementation(libs.hibernate3)
+	implementation(libs.quickfix)
+	implementation(libs.quickfix.messages)
+	implementation(libs.gson)
+	implementation(libs.lmax.disruptor)
+	implementation(libs.rabbitmq)
+	implementation(libs.affinitymanager)
+	implementation(libs.apache.commons3)
+	implementation(libs.commons.beanutils)
+	implementation(libs.commons.dbcp)
+	implementation(libs.commons.net)
+	implementation(libs.commons.math)
+	implementation(libs.commons.collections15)
+	implementation(libs.collections15)
+	implementation(libs.jniwrapper)
+	implementation(libs.jniwrapper.win32)
+	implementation(libs.junit)
+	implementation(libs.reflections)
+	implementation(libs.ostermiller.utils)
+	implementation(libs.mdpv9)
+	implementation(libs.javolution)
+	implementation(libs.esper)
+	implementation(libs.blpapi)
+	implementation(libs.openfast)
+	implementation(libs.openfast.nio2)
+	implementation(libs.onixs.fast.coder)
+	implementation(libs.onixs.fix.engine)
+	implementation(libs.onixs.fix.scheduler)
+	implementation(libs.onixs.utils)
+	implementation(libs.onixs.fixml.converter)
+	implementation(libs.scorpion2api)
+	implementation(libs.qds)
+	implementation(libs.liffe)
+	implementation(libs.lz4)
+	implementation(libs.mina.core)
+	implementation(libs.fmr)
+	implementation(libs.planck)
+	implementation(libs.db4o)
+	implementation(libs.jfreechart)
+	implementation(libs.jcommon)
+	implementation(libs.glazedlists)
+	implementation(libs.jsch)
+	implementation(libs.hdrhistogram)
+	implementation(libs.xlloop)
+	implementation(libs.protobuf)
+	implementation(libs.jdbc)
+	implementation(libs.solace)
+
+	implementation 'com.jetbrains.intellij.java:java-gui-forms-rt:241.14494.308'
+	antTaskPlatform 'com.jetbrains.intellij.java:java-compiler-ant-tasks:241.14494.308'
+}
+
+task compileJava(type: JavaCompile, overwrite: true, dependsOn: configurations.implementation.getTaskDependencyFromProjectDependency(true, 'compileOnly')) {
+	options.encoding = 'UTF-8'
+	doLast {
+		ant.taskdef name: 'javac2', classname: 'com.intellij.ant.Javac2', classpath: configurations.antTaskPlatform.asPath
+		ant.javac2 srcdir: sourceSets.main.java.srcDirs.join(':'),
+				classpath: sourceSets.main.compileClasspath.asPath,
+				destdir: sourceSets.main.output.classesDirs[0],
+				source: sourceCompatibility,
+				target: targetCompatibility,
+				includeAntRuntime: false,
+				encoding: 'UTF-8'
+	}
+}
+
+jar {
+	manifest {
+		attributes("Class-Path": configurations.runtimeClasspath.collect { it.getName() }.join(' '))
+        }
+}
+
+tasks.withType(Tar){
+	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+tasks.withType(Zip){
+	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+//jar {
+//	doLast {
+//		// Fixes IDEA-298989.
+//		fileTree("$buildDir/instrumented/instrumentCode") { include("**/*Form.class") }.files.forEach { delete(it) }
+//	}
+//}
+
+task fatJar(type: Jar) {
+	manifest {
+		attributes 'Main-Class': 'com.programa17.mmm.risk.management.RiskManagementManager'
+	}
+	archiveClassifier = "all"
+	from {
+		configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+	}
+	with jar
+}
