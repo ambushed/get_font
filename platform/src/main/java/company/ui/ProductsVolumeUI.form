@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.ui.ProductsVolumeUI">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="company.ui.ProductsVolumeUI">
   <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="0" vgap="0">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
@@ -146,7 +146,7 @@
               <text value=""/>
             </properties>
           </component>
-          <component id="84ed7" class="com.PlatformTextField" binding="dealAmountTF">
+          <component id="84ed7" class="company.PlatformTextField" binding="dealAmountTF">
             <constraints>
               <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false">
                 <minimum-size width="45" height="-1"/>
@@ -262,7 +262,7 @@
               <text value="Price"/>
             </properties>
           </component>
-          <component id="29e98" class="com.PlatformTextField" binding="dealPriceTF">
+          <component id="29e98" class="company.PlatformTextField" binding="dealPriceTF">
             <constraints>
               <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false">
                 <minimum-size width="45" height="-1"/>
@@ -285,7 +285,7 @@
               <text value="Tradable Id"/>
             </properties>
           </component>
-          <component id="4b24f" class="com.PlatformTextField" binding="dealTradableIdTF">
+          <component id="4b24f" class="company.PlatformTextField" binding="dealTradableIdTF">
             <constraints>
               <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false">
                 <minimum-size width="80" height="-1"/>
@@ -299,7 +299,7 @@
               <foreground color="-16777216"/>
             </properties>
           </component>
-          <component id="78f2f" class="com.PlatformTextField" binding="dealUserOrPortfolioTF">
+          <component id="78f2f" class="company.PlatformTextField" binding="dealUserOrPortfolioTF">
             <constraints>
               <grid row="1" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false">
                 <minimum-size width="80" height="-1"/>

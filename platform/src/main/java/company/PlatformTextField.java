@@ -3,7 +3,7 @@
  * Date: 07/07/2008
  * Time: 15:37:18
  */
-package com;
+package company;
 
 import javax.swing.*;
 import java.awt.*;

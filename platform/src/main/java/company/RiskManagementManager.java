@@ -1,5 +1,5 @@
-package com;
-import com.ui.ProductsVolumeUI;
+package company;
+import company.ui.ProductsVolumeUI;
 import javax.swing.*;
 import java.awt.*;
 
@@ -10,11 +10,10 @@ public class RiskManagementManager {
         final JTabbedPane tabbedPane = new JTabbedPane();
         final Point point = new Point(100, 50);
 
-        ProductsVolumeManager manager = new ProductsVolumeManager();
-        final ProductsVolumeUI derivativesVolumeUI = new ProductsVolumeUI(manager, ProductsVolumeUI.TabType.DERIVATIVES, point);
+        final ProductsVolumeUI derivativesVolumeUI = new ProductsVolumeUI(ProductsVolumeUI.TabType.DERIVATIVES, point);
         tabbedPane.addTab("Derivatives", derivativesVolumeUI.getMainPanel());
 
-        //final ProductsVolumeUI stocksVolumeUI = new ProductsVolumeUI(manager, ProductsVolumeUI.TabType.STOCKS, point);
+        //final ProductsVolumeUI stocksVolumeUI = new ProductsVolumeUI(ProductsVolumeUI.TabType.STOCKS, point);
         //tabbedPane.addTab("Stocks", stocksVolumeUI.getMainPanel());
 
         //create frame
