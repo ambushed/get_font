@@ -13,8 +13,8 @@ public class RiskManagementManager {
         final ProductsVolumeUI derivativesVolumeUI = new ProductsVolumeUI(ProductsVolumeUI.TabType.DERIVATIVES, point);
         tabbedPane.addTab("Derivatives", derivativesVolumeUI.getMainPanel());
 
-        //final ProductsVolumeUI stocksVolumeUI = new ProductsVolumeUI(ProductsVolumeUI.TabType.STOCKS, point);
-        //tabbedPane.addTab("Stocks", stocksVolumeUI.getMainPanel());
+        final ProductsVolumeUI stocksVolumeUI = new ProductsVolumeUI(ProductsVolumeUI.TabType.STOCKS, point);
+        tabbedPane.addTab("Stocks", stocksVolumeUI.getMainPanel());
 
         //create frame
         JFrame ctFrame = new JFrame("Risk Management");

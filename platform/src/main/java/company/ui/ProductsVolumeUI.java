@@ -1,12 +1,9 @@
 package company.ui;
 
-import company.PlatformTextField;
 import org.jdesktop.swingx.JXTable;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.HashSet;
-import java.util.Set;
 
 
 public class ProductsVolumeUI {
@@ -21,18 +18,9 @@ public class ProductsVolumeUI {
     private JButton sendPositionsMailBtn;
     private JCheckBox diffCheckBox;
     private JPanel adminPanel;
-    private JButton addManualDealBtn;
-    private JCheckBox enableAddDealCB;
-    private JComboBox<Integer> dealActionCombo;
-    private JComboBox<Integer> dealTradableTypeCombo;
-    private JComboBox<Integer> dealSourceCombo;
     private JLabel exchangeCodeDealLabel;
     private JButton btnReport;
     private JButton FiltersBtn;
-    private PlatformTextField<Integer> dealAmountTF;
-    private PlatformTextField<Float> dealPriceTF;
-    private PlatformTextField<String> dealTradableIdTF;
-    private PlatformTextField<String> dealUserOrPortfolioTF;
 
     private final TabType tabType;
 
