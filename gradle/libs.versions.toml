@@ -2,47 +2,8 @@
 # https://docs.gradle.org/current/userguide/platforms.html#sub::toml-dependencies-format
 
 [libraries]
-affinity-manager = { module = 'bcmm:setaffinitymanager', version = '1.0' }
-annotations = { module = "org.jetbrains:annotations", version = "24.0.0" }
-agrona = { module = "org.agrona:agrona", version = "1.6.0"}
-apache-commons = { module = "org.apache.commons:commons-lang", version = "2.6"}
-apache-poi = { module = 'org.apache.poi:poi', version = '3.8'}
-apache-poi-ooxml = { module = 'org.apache.poi:poi-ooxml', version = '3.8'}
-commons-io = { module = "commons-io:commons-io", version = "2.4"}
-commons-io26 = { module = "commons-io:commons-io", version = "2.6"}
-apache-commons3 = { module = "org.apache.commons:commons-lang3", version = "3.7"}
-commons = { module = "commons-lang:commons-lang", version = "2.6"}
-sqljdbc = { module = "com.microsoft:sqljdbc41", version = "1.0.0"} # 4.1
-jdbc = { module = 'com.mysql:jdbc', version = '5.1.48' } #uploaded
-joda-time-hibernate = { module = "joda-time:joda-time-hibernate", version = "1.1"}
-joda-time = { module = "joda-time:joda-time", version = "2.3"}
-joda-time16 = { module = "joda-time:joda-time", version = "1.6"}
-joda-primitives = { module = "org.joda:joda-primitives", version = "1.0"}
-log4j = { module = "org.apache.logging.log4j:log4j", version = "1.2.13"} #uploaded
-log4j-api12 = { module = "org.apache.logging.log4j:log4j-1.2-api", version = "2.16.0"}
-log4j-core = { module = "org.apache.logging.log4j:log4j-core", version = "2.16.0"}
-log4j-api = { module = "org.apache.logging.log4j:log4j-api", version = "2.16.0"}
-c3p0 = { module = "c3p0:c3p0", version = '0.9.1.2' }
-guice = { module = 'com.google.inject:guice',  version = '2.0' }
-swingx = { module = 'org.swinglabs:swingx',  version = '0.9.3' }
-xcapi = { module = 'com.exegy:xcapi',  version = '4.13.3' } #it is a guess
-json = { module = 'org.json:json', version = '20171018' }
-websocket = { module = 'com.neovisionaries:nv-websocket-client', version = '2.3' }
-http-client = { module ='org.apache.httpcomponents:httpclient', version ='4.3.4'}
-http-core = { module ='org.apache.httpcomponents:httpcore', version ='4.3.2'}
-xchange-core ={ module ='org.knowm.xchange:xchange-core', version = '4.2.3'}
-xchange-bitstamp = { module ='org.knowm.xchange:xchange-bitstamp', version = '4.2.3'}
-xchange-bitstamp4 = { module ='bcmm:xchange.bitstamp', version = '4.2.4'}
-xchange-stream = { module = 'info.bitrich.xchange-stream:xchange-stream-core', version = '4.2.3' }
-mongodb = { module = 'com.mongodb:mongo', version = '1.2'}
-guava = { module = 'com.google.guava:guava', version = '16.0'}
-reflections = { module = 'org.reflections:reflections', version = '0.9.5-RC2'}
-thoughtworks-xstream = { module = 'com.thoughtworks.xstream:xstream', version = '1.3.1'}
-javax-persistence = { module = 'org.eclipse.persistence:javax.persistence', version= '2.2.1'}
-#jgoodies = { module = 'com.jgoodies:jgoodies-binding', version = '2.7.0'}
-jxl = { module = 'jxl:jxl', version = '1.0'} # uploaded
-layout = { module = 'org.jdesktop:layout', version = '1.0'} # uploaded
-swingx16 = { module = 'org.jdesktop:swingx', version = '1.6'} # uploaded
+swingx16 = { module = 'org.swinglabs.swingx:swingx-all', version = '1.6.3'} # uploaded
+
 binding-core = { module = 'org.jdesktop:binding-core', version = '1.3.0'} # uploaded
 binding-swing = { module = 'org.jdesktop:binding-swing', version = '1.3.0'} # uploaded
 jgoodies-binding = { module = 'org.jgoodies:binding', version = '2.0.5'} # uploaded
@@ -83,7 +44,7 @@ mina-core = { module = 'bcmm:mina-core', version = '2.0.13' } #uploaded
 fmr = { module = 'com.fmr:fmr', version = '1.0' } #uploaded
 planck = { module = 'com.gn.plank:planck', version = '1.0' } #uploaded
 db4o = { module = 'com.db4o:db4o', version = '1.0' } #uploaded
-jfreechart = { module = 'org.jfree:jfreechart', version = '1.0.13' } #uploaded, earliest avail on mvn is 1.0.14	
+jfreechart = { module = 'org.jfree:jfreechart', version = '1.0.13' } #uploaded, earliest avail on mvn is 1.0.14
 jcommon = { module = 'jfree:jcommon', version = '1.0.16'}
 glazedlists = { module = 'net.java.dev.glazedlists:glazedlists_java15', version = '1.8.0' }
 jsch = { module = 'com.jcraft:jsch', version = '0.1.55'}
@@ -98,7 +59,7 @@ solace = { module = 'com.solace:solace-messaging-client', version = "1.3.0" }
 
 #clientServerModules
 solver = { module = 'com.solver:solver-sdk', version = '1.0' } #uploaded
-weka-dev = { module = 'nz.ac.waikato.cms.weka:weka-dev', version = '3.7.12'} 
+weka-dev = { module = 'nz.ac.waikato.cms.weka:weka-dev', version = '3.7.12'}
 ini4j = { module = 'org.codehaus.izpack:izpack-ini4j', version = '5.0.0-beta9'}
 jama = { module = 'gov.nist.math:jama', version = '1.0.2'}
 supercsv = { module = 'org.supercsv:supercsv', version = '1.52'} #uploaded

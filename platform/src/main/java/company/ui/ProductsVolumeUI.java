@@ -22,21 +22,13 @@ public class ProductsVolumeUI {
     private JButton btnReport;
     private JButton FiltersBtn;
 
-    private final TabType tabType;
 
-    /**
-     * The type of tab
-     */
-    public static enum TabType {
-        DERIVATIVES, STOCKS, COUNTER
-    }
 
     /**
      * The location of the previous window created
      */
     final Point pointOfPreviousWindow;
-    public ProductsVolumeUI(final TabType tabType, final Point pointOfMainWindow) {
-        this.tabType = tabType;
+    public ProductsVolumeUI(final Point pointOfMainWindow) {
         this.pointOfPreviousWindow = pointOfMainWindow;
     }
 
